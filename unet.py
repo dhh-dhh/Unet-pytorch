@@ -10,7 +10,7 @@ from PIL import Image
 from torch import nn
 
 from nets.unet import Unet as unet
-from utils.utils import cvtColor, preprocess_input, resize_image
+from utils.utils import cvtColor, preprocess_input, resize_image 
 
 
 #--------------------------------------------#
@@ -176,7 +176,7 @@ class Unet(object):
         #---------------------------------------------------------#
         image_data  = np.expand_dims(np.transpose(preprocess_input(np.array(image_data, np.float32)), (2, 0, 1)), 0)
 
-        with torch.no_grad():
+        with torch.no_grad(): 
             images = torch.from_numpy(image_data)
             if self.cuda:
                 images = images.cuda()
